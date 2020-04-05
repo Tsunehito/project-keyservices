@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     },
 });
 
-const Ky_UrlField = ({ record = {}, source }) => {
+const KSUrlField = ({ record = {}, source }) => {
     const classes = useStyles();
     return (
         <a href={record[source]} className={classes.link} >
@@ -22,4 +22,4 @@ const Ky_UrlField = ({ record = {}, source }) => {
     );
 }
 
-export default Ky_UrlField;
+export default KSUrlField;
