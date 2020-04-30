@@ -6,11 +6,14 @@ export const UserList = props => (
     <List {...props}>
         <Datagrid>
             <TextField source="id" />
-            <TextField source="name" />
+            <TextField source="lastname" />
+            <TextField source="firstname" />
             <EmailField source="email" />
-            <TextField source="phone" />
-            <KSUrlField source="website" />
-            <TextField source="company.name" />
+            <TextField source="telephone" />
+            <TextField source="adress" />
+            <TextField source="type" />
+            <TextField source="createdAt" />
+            <TextField source="updatedAt" />
         </Datagrid>
     </List>
 );
