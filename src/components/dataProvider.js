@@ -1,5 +1,6 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
+
 const apiUrl = 'http://localhost:3000/api';
 const httpClient = (url, options = {}) => {
     if (!options.headers) {

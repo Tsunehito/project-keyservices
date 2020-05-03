@@ -3,7 +3,7 @@ import { Admin, Resource } from 'react-admin';
 import Dashboard from './dashboard/Dashboard';
 import authProvider from './auth/authProvider';
 import { PostList, PostEdit, PostCreate } from './posts/Posts';
-import { UserList } from './users/Users';
+import { UserList, UserEdit, UserCreate } from './users/Users';
 import PostIcon from '@material-ui/icons/Book';
 import UserIcon from '@material-ui/icons/Group';
 import dataProvider from "./dataProvider";
@@ -22,7 +22,12 @@ const App = () => (
       create={PostCreate}
       icon={PostIcon}
     />
-    <Resource name="users" list={UserList} icon={UserIcon} />
+    <Resource
+        name="users"
+        list={UserList}
+        edit={UserEdit}
+        create={UserCreate}
+        icon={UserIcon} />
   </Admin>
 );
 
