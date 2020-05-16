@@ -9,10 +9,13 @@ import {
     EmailField,
     DateField,
     NumberField,
+    ChipField,
+    BooleanField,
     EditButton,
+    DeleteButton,
     TextInput,
-    DateInput,
-    SelectArrayInput  ,
+    SelectInput,
+    BooleanInput,
     Filter,
 } from 'react-admin'
 
@@ -33,53 +36,63 @@ export const UserList = (props) => (
             <TextField source="firstname" />
             <EmailField source="email" />
             <NumberField source="telephone" />
-            <TextField source="adress" />
-            <TextField source="type" />
+            <TextField source="address" />
+            <TextField source="codePostal" />
+            <TextField source="city" />
+            <TextField source="country" />
+            <ChipField source="type" />
+            <BooleanField source="is_active" />
             <DateField source="createdAt" />
             <DateField source="updatedAt" />
-            <EditButton basePath="/user" />
+            <EditButton basePath="/users" />
+            <DeleteButton basePath="/users" />
         </Datagrid>
     </List>
 );
 
-const UserTilte = ({ record }) => {
-    return <span>User {record ? `"${record.title}"` : ''}</span>;
+const UserTitle = ({ record }) => {
+    return <span>User {record ? `${record.id} : "${record.lastname} ${record.firstname}"` : ''}</span>;
 };
 
 export const UserEdit = (props) => (
-    <Edit title={<UserTilte />} {...props}>
+    <Edit title={<UserTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <TextInput source="lastname" label="Last name"/>
-            <TextInput source="firstname" label="First name"/>
-            <TextInput source="email" label="Email Address" type="email"/>
-            <TextInput source="password" label="Password" type="password"/>
-            <TextInput source="telephone" label="Telephone"/>
-            <TextInput source="adress" label="Address"/>
-            <SelectArrayInput  source="type" choices={[
+            <TextInput source="lastname" />
+            <TextInput source="firstname" />
+            <TextInput source="email" type="email" />
+            <TextInput source="password" type="password" />
+            <TextInput source="telephone" />
+            <TextInput source="address" />
+            <TextInput source="codePostal" />
+            <TextInput source="city" />
+            <TextInput source="country" />
+            <SelectInput  source="type" choices={[
                 { id: 'hote', name: 'hote' },
                 { id: 'voyageur', name: 'voyageur' },
             ]}/>
-            <DateInput source="updatedAt" label="Updated at"/>
+            <BooleanInput source="is_active" />
         </SimpleForm>
     </Edit>
 );
 
 export const UserCreate = (props) => (
-    <Create title="Create a user" {...props}>
+    <Create title="Creat new user !" {...props}>
         <SimpleForm>
             <TextInput source="lastname" label="Last name"/>
             <TextInput source="firstname" label="First name"/>
             <TextInput source="email" label="Email Address" type="email"/>
             <TextInput source="password" label="Password" type="password" initiallyVisible />
             <TextInput source="telephone" label="Telephone"/>
-            <TextInput source="adress" label="Address"/>
-            <SelectArrayInput   source="type" choices={[
+            <TextInput source="address" label="Address"/>
+            <TextInput source="codePostal" />
+            <TextInput source="city" />
+            <TextInput source="country" />
+            <SelectInput  source="type" choices={[
                 { id: 'hote', name: 'hote' },
                 { id: 'voyageur', name: 'voyageur' },
             ]}/>
-            <DateInput source="createdAt" label="Created at"/>
-            <DateInput source="updatedAt" label="Updated at"  />
+            <BooleanInput source="is_active" />
         </SimpleForm>
     </Create>
 );
