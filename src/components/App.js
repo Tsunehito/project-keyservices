@@ -10,7 +10,7 @@ import { AnnonceList, AnnonceEdit, AnnonceCreate } from './annonces/Annonces';
 import { UserList, UserEdit, UserCreate } from './users/Users';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
-import { PaniersList, PaniersEdit, PaniersCreate } from './paniers/Paniers';
+import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
 
 // Icons
 import AnnonceIcon from '@material-ui/icons/Book';
@@ -65,10 +65,17 @@ const App = () => (
 
     <Resource
         name="paniers"
-        list={PaniersList}
-        edit={PaniersEdit}
-        create={PaniersCreate}
+        list={PanierList}
+        edit={PanierEdit}
+        create={PanierCreate}
         icon={PanierIcon} />
+
+    <Resource
+        name="roles"
+        list={RoleList}
+        edit={RoleEdit}
+        create={RoleCreate}
+        icon={RoleIcon} />
   </Admin>
 );
 

@@ -15,7 +15,7 @@ import {
     BooleanInput,
 } from 'react-admin'
 
-export const PaniersList = (props) => (
+export const PanierList = (props) => (
     <List
         {...props}
     >
@@ -38,7 +38,7 @@ const PanierTitle = ({ record }) => {
     return <span>Panier {record ? `${record.id} : "${record.name}"` : ''}</span>;
 };
 
-export const PaniersEdit = (props) => (
+export const PanierEdit = (props) => (
     <Edit title={<PanierTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
@@ -51,7 +51,7 @@ export const PaniersEdit = (props) => (
     </Edit>
 );
 
-export const PaniersCreate = (props) => (
+export const PanierCreate = (props) => (
     <Create title="Creat new Panier !" {...props}>
         <SimpleForm>
             <TextInput source="prix" />
