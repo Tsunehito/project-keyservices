@@ -9,6 +9,7 @@ import KSLoginPage from './login/KSLoginPage'
 import { AnnonceList, AnnonceEdit, AnnonceCreate } from './annonces/Annonces';
 import { UserList, UserEdit, UserCreate } from './users/Users';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
+import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
 
 // Icons
 import AnnonceIcon from '@material-ui/icons/Book';
@@ -53,6 +54,13 @@ const App = () => (
         edit={EmployeEdit}
         create={EmployeCreate}
         icon={EmployeeIcon} />
+
+    <Resource
+        name="etats_logement"
+        list={EtatsLogementList}
+        edit={EtatsLogementEdit}
+        create={EtatsLogementCreate}
+        icon={EtatsLogementIcon} />
   </Admin>
 );
 
