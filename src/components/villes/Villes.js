@@ -15,50 +15,44 @@ import {
     BooleanInput,
 } from 'react-admin'
 
-export const PanierList = (props) => (
+export const VilleList = (props) => (
     <List
         {...props}
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
-            <NumberField source="prix" />
             <TextField source="name" />
-            <TextField source="description" />
-            <NumberField source="quantite" />
-            <BooleanField source="is_active" />
+            <NumberField source="nb_concierge" />
+            <BooleanField source="statut" />
             <DateField source="createdAt" />
             <DateField source="updatedAt" />
-            <EditButton basePath="/paniers" />
-            <DeleteButton basePath="/paniers" />
+            <EditButton basePath="/villes" />
+            <DeleteButton basePath="/villes" />
         </Datagrid>
     </List>
 );
 
-const PanierTitle = ({ record }) => {
-    return <span>Panier {record ? `${record.id} : "${record.name}"` : ''}</span>;
+const VilleTitle = ({ record }) => {
+    return <span>Ville {record ? `${record.id} : "${record.name}"` : ''}</span>;
 };
 
-export const PanierEdit = (props) => (
-    <Edit title={<PanierTitle />} {...props}>
+export const VilleEdit = (props) => (
+    <Edit title={<VilleTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <TextInput source="prix" />
             <TextInput source="name" />
-            <TextInput source="description" multiline />
-            <TextInput source="quantite" />
-            <BooleanInput source="is_active" />
+            <TextInput source="nb_concierge" />
+            <BooleanInput source="statut" />
         </SimpleForm>
     </Edit>
 );
 
-export const PanierCreate = (props) => (
-    <Create title="Creat new Panier !" {...props}>
+export const VilleCreate = (props) => (
+    <Create title="Creat new Ville !" {...props}>
         <SimpleForm>
-            <TextInput source="prix" />
             <TextInput source="name" />
-            <TextInput source="description" multiline />
-            <TextInput source="quantite" />
-            <BooleanInput source="is_active" />
+            <TextInput source="nb_concierge" />
+            <BooleanInput source="statut" />
         </SimpleForm>
     </Create>
 );

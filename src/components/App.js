@@ -11,6 +11,7 @@ import { UserList, UserEdit, UserCreate } from './users/Users';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
+import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
 import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
 
@@ -64,6 +65,13 @@ const App = () => (
         edit={PanierEdit}
         create={PanierCreate}
         icon={PanierIcon} />
+
+    <Resource
+        name="villes"
+        list={VilleList}
+        edit={VilleEdit}
+        create={VilleCreate}
+        icon={VilleIcon} />
 
     <Resource
         name="employes"
