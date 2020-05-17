@@ -16,19 +16,11 @@ import {
     TextInput,
     SelectInput,
     BooleanInput,
-    Filter,
 } from 'react-admin'
 
-const UserFilter = (props) => (
-    <Filter {...props}>
-        <TextInput label="Search" source="q" alwaysOn />
-    </Filter>
-);
-
-export const UserList = (props) => (
+export const EmployeList = (props) => (
     <List
         {...props}
-        filters={<UserFilter />}
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
@@ -40,22 +32,22 @@ export const UserList = (props) => (
             <TextField source="codePostal" />
             <TextField source="city" />
             <TextField source="country" />
-            <ChipField source="type" />
+            <ChipField source="role" />
             <BooleanField source="is_active" />
             <DateField source="createdAt" />
             <DateField source="updatedAt" />
-            <EditButton basePath="/users" />
-            <DeleteButton basePath="/users" />
+            <EditButton basePath="/employes" />
+            <DeleteButton basePath="/employes" />
         </Datagrid>
     </List>
 );
 
-const UserTitle = ({ record }) => {
-    return <span>User {record ? `${record.id} : "${record.lastname} ${record.firstname}"` : ''}</span>;
+const EmployeTitle = ({ record }) => {
+    return <span>Employee {record ? `${record.id} : "${record.lastname} ${record.firstname}"` : ''}</span>;
 };
 
-export const UserEdit = (props) => (
-    <Edit title={<UserTitle />} {...props}>
+export const EmployeEdit = (props) => (
+    <Edit title={<EmployeTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
             <TextInput source="lastname" />
@@ -67,17 +59,17 @@ export const UserEdit = (props) => (
             <TextInput source="codePostal" />
             <TextInput source="city" />
             <TextInput source="country" />
-            <SelectInput  source="type" choices={[
-                { id: 'hote', name: 'hote' },
-                { id: 'voyageur', name: 'voyageur' },
+            <SelectInput  source="role" choices={[
+                { id: 'moderator', name: 'moderator' },
+                { id: 'admin', name: 'admin' },
             ]}/>
             <BooleanInput source="is_active" />
         </SimpleForm>
     </Edit>
 );
 
-export const UserCreate = (props) => (
-    <Create title="Creat new user !" {...props}>
+export const EmployeCreate = (props) => (
+    <Create title="Creat new Employee !" {...props}>
         <SimpleForm>
             <TextInput source="lastname" label="Last name"/>
             <TextInput source="firstname" label="First name"/>
@@ -88,9 +80,9 @@ export const UserCreate = (props) => (
             <TextInput source="codePostal" />
             <TextInput source="city" />
             <TextInput source="country" />
-            <SelectInput  source="type" choices={[
-                { id: 'hote', name: 'hote' },
-                { id: 'voyageur', name: 'voyageur' },
+            <SelectInput  source="role" choices={[
+                { id: 'moderator', name: 'moderator' },
+                { id: 'admin', name: 'admin' },
             ]}/>
             <BooleanInput source="is_active" />
         </SimpleForm>
