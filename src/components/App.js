@@ -10,6 +10,7 @@ import { AnnonceList, AnnonceEdit, AnnonceCreate } from './annonces/Annonces';
 import { UserList, UserEdit, UserCreate } from './users/Users';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
+import { CommandesPanierList, CommandesPanierEdit, CommandesPanierCreate} from './commandes_paniers/CommandesPaniers';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
@@ -58,6 +59,13 @@ const App = () => (
         edit={EtatsLogementEdit}
         create={EtatsLogementCreate}
         icon={EtatsLogementIcon} />
+
+    <Resource
+        name="commandes_paniers"
+        list={CommandesPanierList}
+        edit={CommandesPanierEdit}
+        create={CommandesPanierCreate}
+        icon={CommandePanierIcon} />
 
     <Resource
         name="paniers"
