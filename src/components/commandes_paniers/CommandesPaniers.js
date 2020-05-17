@@ -13,11 +13,8 @@ import {
     EditButton,
     DeleteButton,
     TextInput,
-    DateInput,
     SelectInput,
     BooleanInput,
-    ReferenceInput,
-    AutocompleteInput,
     Filter,
 } from 'react-admin'
 
@@ -52,53 +49,47 @@ export const AnnonceList = (props) => (
 );
 
 const AnnonceTitle = ({ record }) => {
-    return <span>Annonce {record ? `${record.id}` : ''}</span>;
+    return <span>User {record ? `${record.id} : "${record.lastname} ${record.firstname}"` : ''}</span>;
 };
 
 export const AnnonceEdit = (props) => (
     <Edit title={<AnnonceTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <DateInput source="date_debut" />
-            <DateInput source="date_fin" />
-            <ReferenceInput
-                source="fk_hote"
-                reference="users"
-                label="Hôte"
-                filterToQuery={searchText => ({ title: searchText })}>
-                <SelectInput  optionText="lastname" />
-            </ReferenceInput>
-            <ReferenceInput
-                source="fk_voyageur"
-                reference="users"
-                label="Voyageur"
-                filterToQuery={searchText => ({ title: searchText })}>
-                <AutocompleteInput optionText="lastname" />
-            </ReferenceInput>
+            <TextInput source="lastname" />
+            <TextInput source="firstname" />
+            <TextInput source="email" type="email" />
+            <TextInput source="password" type="password" />
+            <TextInput source="telephone" />
+            <TextInput source="address" />
+            <TextInput source="codePostal" />
+            <TextInput source="city" />
+            <TextInput source="country" />
+            <SelectInput  source="type" choices={[
+                { id: 'hote', name: 'hote' },
+                { id: 'voyageur', name: 'voyageur' },
+            ]}/>
             <BooleanInput source="is_active" />
         </SimpleForm>
     </Edit>
 );
 
 export const AnnonceCreate = (props) => (
-    <Create title="Creat new Announce !" {...props}>
+    <Create title="Creat new user !" {...props}>
         <SimpleForm>
-            <DateInput source="date_debut" />
-            <DateInput source="date_fin" />
-            <ReferenceInput
-                source="fk_hote"
-                reference="users"
-                label="Hôte"
-                filterToQuery={searchText => ({ title: searchText })}>
-                <SelectInput  optionText="lastname" />
-            </ReferenceInput>
-            <ReferenceInput
-                source="fk_voyageur"
-                reference="users"
-                label="Voyageur"
-                filterToQuery={searchText => ({ title: searchText })}>
-                <AutocompleteInput optionText="lastname" />
-            </ReferenceInput>
+            <TextInput source="lastname" label="Last name"/>
+            <TextInput source="firstname" label="First name"/>
+            <TextInput source="email" label="Email Address" type="email"/>
+            <TextInput source="password" label="Password" type="password" initiallyVisible />
+            <TextInput source="telephone" label="Telephone"/>
+            <TextInput source="address" label="Address"/>
+            <TextInput source="codePostal" />
+            <TextInput source="city" />
+            <TextInput source="country" />
+            <SelectInput  source="type" choices={[
+                { id: 'hote', name: 'hote' },
+                { id: 'voyageur', name: 'voyageur' },
+            ]}/>
             <BooleanInput source="is_active" />
         </SimpleForm>
     </Create>
