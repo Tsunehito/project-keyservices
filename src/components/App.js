@@ -11,6 +11,7 @@ import { UserList, UserEdit, UserCreate } from './users/Users';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
+import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
 import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
 
 // Icons
@@ -70,6 +71,13 @@ const App = () => (
         edit={EmployeEdit}
         create={EmployeCreate}
         icon={EmployeeIcon} />
+
+    <Resource
+        name="tarifs"
+        list={TarifList}
+        edit={TarifEdit}
+        create={TarifCreate}
+        icon={TarifIcon} />
 
     <Resource
         name="roles"
