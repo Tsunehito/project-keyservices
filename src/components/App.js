@@ -11,6 +11,7 @@ import { UserList, UserEdit, UserCreate } from './users/Users';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
+import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
 
 // Icons
 import AnnonceIcon from '@material-ui/icons/Book';
@@ -50,13 +51,6 @@ const App = () => (
         icon={AnnonceIcon} />
 
     <Resource
-        name="employes"
-        list={EmployeList}
-        edit={EmployeEdit}
-        create={EmployeCreate}
-        icon={EmployeeIcon} />
-
-    <Resource
         name="etats_logement"
         list={EtatsLogementList}
         edit={EtatsLogementEdit}
@@ -71,11 +65,20 @@ const App = () => (
         icon={PanierIcon} />
 
     <Resource
+        name="employes"
+        list={EmployeList}
+        edit={EmployeEdit}
+        create={EmployeCreate}
+        icon={EmployeeIcon} />
+
+    <Resource
         name="roles"
         list={RoleList}
         edit={RoleEdit}
         create={RoleCreate}
         icon={RoleIcon} />
+
+
   </Admin>
 );
 
