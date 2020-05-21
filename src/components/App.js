@@ -8,13 +8,16 @@ import KSLoginPage from './login/KSLoginPage'
 // Lists
 import { AnnonceList, AnnonceEdit, AnnonceCreate } from './annonces/Annonces';
 import { UserList, UserEdit, UserCreate } from './users/Users';
+import { LogementList, LogementEdit, LogementCreate } from './logements/Logements';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
 import { CommandesPanierList, CommandesPanierEdit, CommandesPanierCreate} from './commandes_paniers/CommandesPaniers';
+import { DisponibiliteList, DisponibiliteEdit, DisponibiliteCreate} from './disponibilites/Disponibilites';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
+import { FactureList, FactureEdit, FactureCreate } from './factures/Factures';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
-import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
+// import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
 
 // Icons
 import AnnonceIcon from '@material-ui/icons/Book';
@@ -47,6 +50,13 @@ const App = () => (
         icon={UserIcon} />
 
     <Resource
+        name="logements"
+        list={LogementList}
+        edit={LogementEdit}
+        create={LogementCreate}
+        icon={LogementIcon} />
+
+    <Resource
         name="annonces"
         list={AnnonceList}
         edit={AnnonceEdit}
@@ -68,11 +78,25 @@ const App = () => (
         icon={CommandePanierIcon} />
 
     <Resource
+        name="disponibilites"
+        list={DisponibiliteList}
+        edit={DisponibiliteEdit}
+        create={DisponibiliteCreate}
+        icon={DisponibilityIcon} />
+
+    <Resource
         name="paniers"
         list={PanierList}
         edit={PanierEdit}
         create={PanierCreate}
         icon={PanierIcon} />
+
+    <Resource
+        name="factures"
+        list={FactureList}
+        edit={FactureEdit}
+        create={FactureCreate}
+        icon={FactureIcon} />
 
     <Resource
         name="villes"
@@ -95,12 +119,12 @@ const App = () => (
         create={TarifCreate}
         icon={TarifIcon} />
 
-    <Resource
-        name="roles"
-        list={RoleList}
-        edit={RoleEdit}
-        create={RoleCreate}
-        icon={RoleIcon} />
+    {/*<Resource*/}
+    {/*    name="roles"*/}
+    {/*    list={RoleList}*/}
+    {/*    edit={RoleEdit}*/}
+    {/*    create={RoleCreate}*/}
+    {/*    icon={RoleIcon} />*/}
 
 
   </Admin>

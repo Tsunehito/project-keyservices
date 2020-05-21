@@ -15,86 +15,70 @@ import {
     DateInput,
     SelectInput,
     ReferenceInput,
-    AutocompleteInput,
     Filter,
 } from 'react-admin'
 
-const CommandesPanierFilter = (props) => (
+const DisponibiliteFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
     </Filter>
 );
 
-export const CommandesPanierList = (props) => (
+
+
+export const DisponibiliteList = (props) => (
     <List
         {...props}
-        filters={<CommandesPanierFilter />}
+        filters={<DisponibiliteFilter />}
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
-            <DateField source="date_commande" />
-            <DateField source="date_livree" />
-            <ReferenceField label="User" source="fk_user" reference="users">
-                <TextField source="lastname" />
+            <ReferenceField label="ID Logement" source="fk_logement" reference="logements">
+                <TextField source="id" />
             </ReferenceField>
-            <ReferenceField label="Panier
-            " source="fk_panier" reference="paniers">
-                <TextField source="name" />
-            </ReferenceField>
+            <DateField source="date_debut" />
+            <DateField source="date_fin" />
             <DateField source="createdAt" />
             <DateField source="updatedAt" />
-            <EditButton basePath="/commandes_paniers" />
-            <DeleteButton basePath="/commandes_paniers" />
+            <EditButton basePath="/diponibilites" />
+            <DeleteButton basePath="/diponibilites" />
         </Datagrid>
     </List>
 );
 
-const CommandesPanierTitle = ({ record }) => {
-    return <span>Commande Panier {record ? `${record.id}` : ''}</span>;
+const DisponibiliteTitle = ({ record }) => {
+    return <span>Disponibilité {record ? `${record.id}` : ''}</span>;
 };
 
-export const CommandesPanierEdit = (props) => (
-    <Edit title={<CommandesPanierTitle />} {...props}>
+export const DisponibiliteEdit = (props) => (
+    <Edit title={<DisponibiliteTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <DateInput source="date_commande" />
-            <DateInput source="date_livree" />
+            <DateInput source="date_debut" />
+            <DateInput source="date_fin" />
             <ReferenceInput
-                label="User"
-                source="fk_user"
-                reference="users"
+                label="ID Logement"
+                source="fk_logement"
+                reference="logements"
                 filterToQuery={searchText => ({ title: searchText })}>
-                <SelectInput  optionText="lastname" />
-            </ReferenceInput>
-            <ReferenceInput
-                label="Panier"
-                source="fk_panier"
-                reference="paniers"
-                filterToQuery={searchText => ({ title: searchText })}>
-                <AutocompleteInput optionText="name" />
+                <SelectInput  optionText="id" />
             </ReferenceInput>
         </SimpleForm>
     </Edit>
 );
 
-export const CommandesPanierCreate = (props) => (
-    <Create title="Creat new Commande Panier !" {...props}>
+export const DisponibiliteCreate = (props) => (
+    <Create title="Creat new Disponibilité !" {...props}>
         <SimpleForm>
-            <DateInput source="date_commande" />
-            <DateInput source="date_livree" />
+            <TextInput disabled source="id" />
+            <DateInput source="date_debut" />
+            <DateInput source="date_fin" />
             <ReferenceInput
-                label="User"
-                source="fk_user"
-                reference="users"
+                label="ID Logement"
+                source="fk_logement"
+                reference="logements"
                 filterToQuery={searchText => ({ title: searchText })}>
-                <SelectInput  optionText="lastname" />
-            </ReferenceInput>
-            <ReferenceInput
-                label="Panier"
-                source="fk_panier"
-                reference="paniers"
-                filterToQuery={searchText => ({ title: searchText })}>
-                <AutocompleteInput optionText="name" />
+                <SelectInput  optionText="id" />
             </ReferenceInput>
         </SimpleForm>
     </Create>
