@@ -32,7 +32,6 @@ export const CommandesPanierList = (props) => (
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
-            <TextField source="code" />
             <DateField source="date_commande" />
             <DateField source="date_livree" />
             <ReferenceField label="User" source="fk_user" reference="users">
@@ -58,7 +57,6 @@ export const CommandesPanierEdit = (props) => (
     <Edit title={<CommandesPanierTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <TextInput disabled source="code" />
             <DateInput source="date_commande" />
             <DateInput source="date_livree" />
             <ReferenceInput
@@ -82,7 +80,6 @@ export const CommandesPanierEdit = (props) => (
 export const CommandesPanierCreate = (props) => (
     <Create title="Creat new Commande Panier !" {...props}>
         <SimpleForm>
-            <TextInput source="code" />
             <DateInput source="date_commande" />
             <DateInput source="date_livree" />
             <ReferenceInput
