@@ -12,19 +12,26 @@ import {
     EditButton,
     DeleteButton,
     TextInput,
-    BooleanInput,
     ReferenceInput,
     SelectInput,
     DateInput,
+    Filter,
 } from 'react-admin'
+
+
+const FactureFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="q" alwaysOn />
+    </Filter>
+);
 
 export const FactureList = (props) => (
     <List
         {...props}
+        filters={<FactureFilter />}
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
-            <TextField source="code" />
             <NumberField source="montant" />
             <TextField source="note" />
             <DateField source="date_facturation" />
@@ -32,7 +39,7 @@ export const FactureList = (props) => (
                 <TextField source="lastname" />
             </ReferenceField>
             <ReferenceField label="Annonce" source="fk_annonce" reference="annonces">
-                <TextField source="code" />
+                <TextField source="id" />
             </ReferenceField>
             <DateField source="createdAt" />
             <DateField source="updatedAt" />
@@ -43,14 +50,13 @@ export const FactureList = (props) => (
 );
 
 const FactureTitle = ({ record }) => {
-    return <span>Facture {record ? `${record.id} : "${record.code}"` : ''}</span>;
+    return <span>Facture {record ? `${record.id} ` : ''}</span>;
 };
 
 export const FactureEdit = (props) => (
     <Edit title={<FactureTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <TextInput disabled source="code" />
             <TextInput source="montant" />
             <TextInput source="note" multiline />
             <DateInput source="date_facturation" />
@@ -66,7 +72,7 @@ export const FactureEdit = (props) => (
                 source="fk_annonce"
                 reference="annonces"
                 filterToQuery={searchText => ({ title: searchText })}>
-                <SelectInput optionText="code" />
+                <SelectInput optionText="id" />
             </ReferenceInput>
         </SimpleForm>
     </Edit>
@@ -75,11 +81,23 @@ export const FactureEdit = (props) => (
 export const FactureCreate = (props) => (
     <Create title="Creat new Facture !" {...props}>
         <SimpleForm>
-            <TextInput source="prix" />
-            <TextInput source="name" />
-            <TextInput source="description" multiline />
-            <TextInput source="quantite" />
-            <BooleanInput source="is_active" />
+            <TextInput source="montant" />
+            <TextInput source="note" multiline />
+            <DateInput source="date_facturation" />
+            <ReferenceInput
+                label="User"
+                source="fk_user"
+                reference="users"
+                filterToQuery={searchText => ({ title: searchText })}>
+                <SelectInput  optionText="lastname" />
+            </ReferenceInput>
+            <ReferenceInput
+                label="Annonce"
+                source="fk_annonce"
+                reference="annonces"
+                filterToQuery={searchText => ({ title: searchText })}>
+                <SelectInput optionText="id" />
+            </ReferenceInput>
         </SimpleForm>
     </Create>
 );

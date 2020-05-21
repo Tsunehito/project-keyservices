@@ -17,7 +17,7 @@ import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
 import { FactureList, FactureEdit, FactureCreate } from './factures/Factures';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
-// import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
+import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
 
 // Icons
 import AnnonceIcon from '@material-ui/icons/Book';
@@ -31,7 +31,7 @@ import LogementIcon from '@material-ui/icons/Apartment';
 import MessageIcon from '@material-ui/icons/QuestionAnswer';
 import PanierIcon from '@material-ui/icons/ShoppingCart';
 import RoleIcon from '@material-ui/icons/Wc';
-import ServiveIcon from '@material-ui/icons/TransferWithinAStation';
+import ServiceIcon from '@material-ui/icons/TransferWithinAStation';
 import TacheIcon from '@material-ui/icons/PlaylistAddCheck';
 import TarifIcon from '@material-ui/icons/MonetizationOn';
 import VilleIcon from '@material-ui/icons/LocationCity';
@@ -119,12 +119,12 @@ const App = () => (
         create={TarifCreate}
         icon={TarifIcon} />
 
-    {/*<Resource*/}
-    {/*    name="roles"*/}
-    {/*    list={RoleList}*/}
-    {/*    edit={RoleEdit}*/}
-    {/*    create={RoleCreate}*/}
-    {/*    icon={RoleIcon} />*/}
+    <Resource
+        name="roles"
+        list={RoleList}
+        edit={RoleEdit}
+        create={RoleCreate}
+        icon={RoleIcon} />
 
 
   </Admin>
