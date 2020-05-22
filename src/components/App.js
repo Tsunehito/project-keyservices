@@ -17,6 +17,7 @@ import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
 import { FactureList, FactureEdit, FactureCreate } from './factures/Factures';
 import { MessageList, MessageEdit, MessageCreate } from './messages/Messages';
 import { ServiceList, ServiceEdit, ServiceCreate } from './services/Services';
+import { TacheList, TacheEdit, TacheCreate } from './taches/Taches';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
 import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
@@ -113,6 +114,13 @@ const App = () => (
         edit={ServiceEdit}
         create={ServiceCreate}
         icon={ServiceIcon} />
+
+    <Resource
+        name="taches"
+        list={TacheList}
+        edit={TacheEdit}
+        create={TacheCreate}
+        icon={TacheIcon} />
 
     <Resource
         name="villes"
