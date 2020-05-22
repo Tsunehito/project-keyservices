@@ -16,6 +16,7 @@ import { DisponibiliteList, DisponibiliteEdit, DisponibiliteCreate} from './disp
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
 import { FactureList, FactureEdit, FactureCreate } from './factures/Factures';
 import { MessageList, MessageEdit, MessageCreate } from './messages/Messages';
+import { ServiceList, ServiceEdit, ServiceCreate } from './services/Services';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
 import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
@@ -105,6 +106,13 @@ const App = () => (
         edit={MessageEdit}
         create={MessageCreate}
         icon={MessageIcon} />
+
+    <Resource
+        name="services"
+        list={ServiceList}
+        edit={ServiceEdit}
+        create={ServiceCreate}
+        icon={ServiceIcon} />
 
     <Resource
         name="villes"
