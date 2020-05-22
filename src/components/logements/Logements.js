@@ -80,7 +80,7 @@ export const LogementEdit = (props) => (
                 <SelectInput  optionText="name" />
             </ReferenceInput>
             <TextInput source="complement" />
-            <TextInput source="description" />
+            <TextInput source="description" multiline />
             <TextInput source="quartier" />
             <SelectInput  source="type" choices={[
                 { id: 'maison', name: 'Maison' },
@@ -118,7 +118,7 @@ export const LogementCreate = (props) => (
                 <SelectInput  optionText="name" />
             </ReferenceInput>
             <TextInput source="complement" />
-            <TextInput source="description" />
+            <TextInput source="description" multiline />
             <TextInput source="quartier" />
             <SelectInput  source="type" choices={[
                 { id: 'maison', name: 'Maison' },

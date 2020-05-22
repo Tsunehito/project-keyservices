@@ -15,6 +15,7 @@ import { CommandesPanierList, CommandesPanierEdit, CommandesPanierCreate} from '
 import { DisponibiliteList, DisponibiliteEdit, DisponibiliteCreate} from './disponibilites/Disponibilites';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
 import { FactureList, FactureEdit, FactureCreate } from './factures/Factures';
+import { MessageList, MessageEdit, MessageCreate } from './messages/Messages';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
 import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
@@ -97,6 +98,13 @@ const App = () => (
         edit={FactureEdit}
         create={FactureCreate}
         icon={FactureIcon} />
+
+    <Resource
+        name="messages"
+        list={MessageList}
+        edit={MessageEdit}
+        create={MessageCreate}
+        icon={MessageIcon} />
 
     <Resource
         name="villes"
