@@ -1,7 +1,9 @@
+import { apiUrl } from '../../config';
+
 const authProvider = {
     // called when the user attempts to log in
     login: ({ email, password }) => {
-        const request = new Request('http://localhost:3000/api/e/auth/signin', {
+        const request = new Request( apiUrl + '/e/auth/signin', {
             method: 'POST',
             body: JSON.stringify({email, password}),
             headers: new Headers({'Content-Type': 'application/json'}),
