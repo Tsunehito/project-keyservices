@@ -19,6 +19,7 @@ export const TarifList = (props) => (
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
+            <TextField source="name" />
             <TextField source="commission" />
             <DateField source="createdAt" />
             <DateField source="updatedAt" />
@@ -36,6 +37,7 @@ export const TarifEdit = (props) => (
     <Edit title={<TarifTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
+            <TextInput disabled source="name" />
             <TextInput source="commission" />
         </SimpleForm>
     </Edit>
@@ -44,6 +46,7 @@ export const TarifEdit = (props) => (
 export const TarifCreate = (props) => (
     <Create title="Creat new tarif !" {...props}>
         <SimpleForm>
+            <TextInput source="name" />
             <TextInput source="commission" />
         </SimpleForm>
     </Create>

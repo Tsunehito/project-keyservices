@@ -8,9 +8,16 @@ import KSLoginPage from './login/KSLoginPage'
 // Lists
 import { AnnonceList, AnnonceEdit, AnnonceCreate } from './annonces/Annonces';
 import { UserList, UserEdit, UserCreate } from './users/Users';
+import { LogementList, LogementEdit, LogementCreate } from './logements/Logements';
 import { EmployeList, EmployeEdit, EmployeCreate } from './employes/Employes';
 import { EtatsLogementList, EtatsLogementEdit, EtatsLogementCreate} from './etats_logements/EtatsLogements';
+import { CommandesPanierList, CommandesPanierEdit, CommandesPanierCreate} from './commandes_paniers/CommandesPaniers';
+import { DisponibiliteList, DisponibiliteEdit, DisponibiliteCreate} from './disponibilites/Disponibilites';
 import { PanierList, PanierEdit, PanierCreate } from './paniers/Paniers';
+import { FactureList, FactureEdit, FactureCreate } from './factures/Factures';
+import { MessageList, MessageEdit, MessageCreate } from './messages/Messages';
+import { ServiceList, ServiceEdit, ServiceCreate } from './services/Services';
+import { TacheList, TacheEdit, TacheCreate } from './taches/Taches';
 import { VilleList, VilleEdit, VilleCreate } from './villes/Villes';
 import { TarifList, TarifEdit, TarifCreate } from './tarifs/Tarifs';
 import { RoleList, RoleEdit, RoleCreate } from './roles/Roles';
@@ -27,7 +34,7 @@ import LogementIcon from '@material-ui/icons/Apartment';
 import MessageIcon from '@material-ui/icons/QuestionAnswer';
 import PanierIcon from '@material-ui/icons/ShoppingCart';
 import RoleIcon from '@material-ui/icons/Wc';
-import ServiveIcon from '@material-ui/icons/TransferWithinAStation';
+import ServiceIcon from '@material-ui/icons/TransferWithinAStation';
 import TacheIcon from '@material-ui/icons/PlaylistAddCheck';
 import TarifIcon from '@material-ui/icons/MonetizationOn';
 import VilleIcon from '@material-ui/icons/LocationCity';
@@ -46,6 +53,13 @@ const App = () => (
         icon={UserIcon} />
 
     <Resource
+        name="logements"
+        list={LogementList}
+        edit={LogementEdit}
+        create={LogementCreate}
+        icon={LogementIcon} />
+
+    <Resource
         name="annonces"
         list={AnnonceList}
         edit={AnnonceEdit}
@@ -60,11 +74,53 @@ const App = () => (
         icon={EtatsLogementIcon} />
 
     <Resource
+        name="commandes_paniers"
+        list={CommandesPanierList}
+        edit={CommandesPanierEdit}
+        create={CommandesPanierCreate}
+        icon={CommandePanierIcon} />
+
+    <Resource
+        name="disponibilites"
+        list={DisponibiliteList}
+        edit={DisponibiliteEdit}
+        create={DisponibiliteCreate}
+        icon={DisponibilityIcon} />
+
+    <Resource
         name="paniers"
         list={PanierList}
         edit={PanierEdit}
         create={PanierCreate}
         icon={PanierIcon} />
+
+    <Resource
+        name="factures"
+        list={FactureList}
+        edit={FactureEdit}
+        create={FactureCreate}
+        icon={FactureIcon} />
+
+    <Resource
+        name="messages"
+        list={MessageList}
+        edit={MessageEdit}
+        create={MessageCreate}
+        icon={MessageIcon} />
+
+    <Resource
+        name="services"
+        list={ServiceList}
+        edit={ServiceEdit}
+        create={ServiceCreate}
+        icon={ServiceIcon} />
+
+    <Resource
+        name="taches"
+        list={TacheList}
+        edit={TacheEdit}
+        create={TacheCreate}
+        icon={TacheIcon} />
 
     <Resource
         name="villes"

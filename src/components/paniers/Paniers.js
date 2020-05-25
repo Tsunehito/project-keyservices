@@ -21,8 +21,8 @@ export const PanierList = (props) => (
     >
         <Datagrid rowClick="edit">
             <NumberField source="id" />
-            <NumberField source="prix" />
             <TextField source="name" />
+            <NumberField source="prix" />
             <TextField source="description" />
             <NumberField source="quantite" />
             <BooleanField source="is_active" />
