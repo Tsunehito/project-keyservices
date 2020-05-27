@@ -1,24 +1,46 @@
 {
-  "name": "ks-admin",
-  "version": "0.1.0",
+  "name": "keyservices",
+  "version": "2.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
     "@material-ui/styles": "^4.9.10",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/react": "^9.4.1",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "bootstrap-icons": "^1.0.0-alpha3",
+    "classnames": "^2.2.6",
+    "is-empty": "^1.2.0",
+    "jquery": "^3.4.1",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.25.3",
+    "node-sass": "^4.13.1",
     "jsonexport": "^2.4.1",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.4.0",
     "ra-data-simple-rest": "^3.3.2",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-admin": "^3.4.0",
     "react-bootstrap": "^1.0.0",
+    "react-datepicker": "^2.16.0",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools": "^3.5.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
-    "start": "set PORT=3001 && react-scripts start",
+    "start": "set PORT=3022 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -36,8 +58,10 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
-    ],
-    "homepage": "."
-  }
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
+  "homepage": ".",
+  "proxy": "http://localhost:3000"
 }
