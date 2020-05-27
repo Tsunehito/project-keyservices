@@ -1,6 +1,6 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
-import { apiUrl } from '../config';
+import { apiUrl } from '../../config';
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -21,7 +21,6 @@ export default {
             filter: JSON.stringify(params.filter),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
             total: parseInt(json.length),

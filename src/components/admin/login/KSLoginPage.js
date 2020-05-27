@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Login, useLogin, useNotify, Notification } from 'react-admin';
-import * as Logo from './../../img/logo_ks_small.jpg';
+import * as Logo from '../../../img/logo_ks_small.jpg';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';

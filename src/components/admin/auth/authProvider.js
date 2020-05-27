@@ -1,4 +1,4 @@
-import { apiUrl } from '../../config';
+import { apiUrl } from '../../../config';
 
 const authProvider = {
     // called when the user attempts to log in
