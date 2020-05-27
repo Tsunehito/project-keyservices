@@ -39,7 +39,7 @@ class UserProfile extends Component {
 this.setState({
   fk_ville: nextProps.logement.logement.fk_ville,
   addresse: nextProps.logement.logement.addresse,
-  code_postal: nextProps.logement.logement.code_postal,
+  codePostal: nextProps.logement.logement.codePostal,
   complement: nextProps.logement.logement.complement,
   type: nextProps.logement.logement.type,
   nb_lits: nextProps.logement.logement.nb_lits,

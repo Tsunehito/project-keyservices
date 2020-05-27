@@ -39,7 +39,7 @@ class LogementsList extends Component {
                     <td> {logement.id} </td>
                     <td> {logement.type} </td>
                     <td> {logement.address} </td>
-                    <td> {logement.code_postal} </td>
+                    <td> {logement.codePostal} </td>
                     <td> {this.state.val} </td>
 
 

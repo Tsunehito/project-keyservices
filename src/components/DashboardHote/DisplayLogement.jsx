@@ -14,7 +14,7 @@ class DisplayLogement extends Component {
         this.state = {
             fk_ville: "",
             address: "",
-            code_postal: "",
+            codePostal: "",
             complement: "",
             type: "",
             nb_lits: "",
@@ -41,7 +41,7 @@ class DisplayLogement extends Component {
              this.setState({
 
              address: this.props.logement.logement.address,
-             code_postal: this.props.logement.logement.code_postal
+             codePostal: this.props.logement.logement.codePostal
             })
        }*/
     }
@@ -51,7 +51,7 @@ class DisplayLogement extends Component {
         this.setState({
             fk_ville: nextProps.logement.logement.fk_ville,
             address: nextProps.logement.logement.address,
-            code_postal: nextProps.logement.logement.code_postal,
+            codePostal: nextProps.logement.logement.codePostal,
             complement: nextProps.logement.logement.complement,
             type: nextProps.logement.logement.type,
             nb_lits: nextProps.logement.logement.nb_lits,
@@ -85,7 +85,7 @@ class DisplayLogement extends Component {
         const logementInfo = {
             fk_ville: this.state.fk_ville,
             address: this.state.address,
-            code_postal: this.state.code_postal,
+            codePostal: this.state.codePostal,
             complement: this.state.complement,
             type: this.state.type,
             nb_lits: this.state.nb_lits,
@@ -136,7 +136,7 @@ class DisplayLogement extends Component {
                                 <div className="card-body">
                                     <p>Adresse: {logement.address}</p>
                                     <p>Complément: {logement.complement}</p>
-                                    <p>Code Postal: {logement.code_postal}</p>
+                                    <p>Code Postal: {logement.codePostal}</p>
                                     <p>Ville: {this.renderVilleName()}</p>
                                     <p>Type: {logement.type}</p>
                                     <p>Superficie: {logement.superficie}</p>
@@ -254,11 +254,11 @@ class DisplayLogement extends Component {
                                         </div>
 
                                         <div className="form-group">
-                                            <label for="code_postal">Code postal*</label>
-                                            <input type="text" name="code_postal" id="code_postal"
+                                            <label for="codePostal">Code postal*</label>
+                                            <input type="text" name="codePostal" id="codePostal"
                                                    placeholder="code postal" className="form-control"
 
-                                                   value={this.state.code_postal}
+                                                   value={this.state.codePostal}
                                                    onChange={this.onChange} disabled/>
                                         </div>
 
@@ -275,7 +275,7 @@ class DisplayLogement extends Component {
                                         </div>
 
                                         <div className="form-group">
-                                            <label for="code_postal">Superficie*</label>
+                                            <label for="codePostal">Superficie*</label>
                                             <input type="text" name="superficie" id="superficie"
                                                    placeholder="superficie" className="form-control"
                                                    value={this.state.superficie}

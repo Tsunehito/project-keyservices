@@ -8,7 +8,7 @@ export const register = newUser => {
     firstname: newUser.firstname,
     lastname: newUser.lastname,
     type: newUser.type,
-    adress: newUser.adress,
+    address: newUser.address,
     telephone: newUser.telephone,
     password: newUser.password,
     password2: newUser.password2

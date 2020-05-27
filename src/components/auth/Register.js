@@ -13,7 +13,7 @@ class Register extends Component {
             email: '',
             firstname: '',
             lastname: '',
-            adress: '',
+            address: '',
             telephone: '',
             password: '',
             password2: '',
@@ -55,7 +55,7 @@ class Register extends Component {
             email: this.state.email,
             firstname: this.state.firstname,
             lastname: this.state.lastname,
-            adress: this.state.adress,
+            address: this.state.address,
             telephone: this.state.telephone,
             password: this.state.password,
             password2: this.state.password2
@@ -134,20 +134,20 @@ class Register extends Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="adress">Adresse</label>
+                                <label htmlFor="address">Adresse</label>
                                 <input
-                                    id="adress"
+                                    id="address"
                                     type="text"
-                                    name="adress"
+                                    name="address"
                                     placeholder="Enter your last address"
                                     className={classnames("form-control", {
-                                        invalid: errors.adress
+                                        invalid: errors.address
                                     })}
-                                    value={this.state.adress}
+                                    value={this.state.address}
                                     onChange={this.onChange}
                                 />
                                 <span className="red-text" style={{color: 'red'}}>
-                      {errors.adress}  
+                      {errors.address}
                 </span>
                             </div>
 

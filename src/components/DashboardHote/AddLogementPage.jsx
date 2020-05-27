@@ -13,7 +13,7 @@ class AddLogementPage extends Component {
         this.state = {
             fk_ville: "",
             address: "",
-            code_postal: "",
+            codePostal: "",
             complement: "",
             type: "",
             nb_lits: "",
@@ -49,7 +49,7 @@ class AddLogementPage extends Component {
             const logement = {
                 fk_ville: this.state.fk_ville,
                 address: this.state.address,
-                code_postal: this.state.code_postal,
+                codePostal: this.state.codePostal,
                 type: this.state.type,
                 complement: this.state.complement,
                 nb_lits: this.state.nb_lits,
@@ -127,15 +127,15 @@ class AddLogementPage extends Component {
                             </div>
 
                             <div class="form-group">
-                                <label for="code_postal">Code postal*</label>
-                                <input type="text" name="code_postal" id="code_postal" placeholder="code postal"
+                                <label for="codePostal">Code postal*</label>
+                                <input type="text" name="codePostal" id="codePostal" placeholder="code postal"
                                        className={classnames("form-control", {
-                                           invalid: errors.code_postal
+                                           invalid: errors.codePostal
                                        })}
-                                       value={this.state.code_postal}
+                                       value={this.state.codePostal}
                                        onChange={this.onChange}/>
                                 <span className="red-text" style={{color: 'red'}}>
-                                    {errors.code_postal}  
+                                    {errors.codePostal}
                                 </span>
                             </div>
 
@@ -157,7 +157,7 @@ class AddLogementPage extends Component {
                             </div>
 
                             <div class="form-group">
-                                <label for="code_postal">Superficie*</label>
+                                <label for="codePostal">Superficie*</label>
                                 <input type="text" name="superficie" id="superficie" placeholder="superficie"
                                        className={classnames("form-control", {
                                            invalid: errors.superficie

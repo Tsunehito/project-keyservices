@@ -16,9 +16,9 @@ class Paniers extends Component{
 			<div className="col-md-4 mt-2" key={panier.id}>
 			<div className="thumbnail text-center">
 				<a href={`#${panier.id}`} onClick={()=> this.props.addToCart(this.props.cartItems, panier)}>
-					<img style={{width:'200px', height:'150px'}} src={`/assets/${panier.imagePanier}.jpg`} alt={panier.libelle}/>
+					<img style={{width:'200px', height:'150px'}} src={`/assets/${panier.imagePanier}.jpg`} alt={panier.name}/>
 					<p style={{color:'orange', fontSize: '1.3em'}}>
-						{panier.libelle}
+						{panier.name}
 					</p>
 				</a>
 				<div>
