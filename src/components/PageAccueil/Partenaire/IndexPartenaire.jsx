@@ -41,7 +41,7 @@ const Styles = styled.div
 
 .partTitle {
     margin-top: 0;
-    font-size: 40px; 
+    font-size: 30px; 
     text-align: center;
     margin-bottom: 0;
    
@@ -56,12 +56,11 @@ class IndexPartenaire extends Component {
        <Styles>
       
             <div className="container-fluid partenaire">
-              <h2 className="partTitle"> Nous travaillons avec: </h2>
+                <h2 className="partTitle"> Voici les plateforme sur lesquelles keyservice publiera vos biens: </h2>
                 <div className="row justify-content-center">
                     <div className="col4">
                         <img className="logo1 logo" src="/assets/airbnb6.png"  alt=""/>
                     </div>
-                       
 
                     <div className="col4">
                         <img className="logo3 logo" src="/assets/abritel.png" alt=""/>

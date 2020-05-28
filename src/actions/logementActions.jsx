@@ -112,7 +112,7 @@ export const updateLogement = (logementId, data, history) => dispatch => {
                 type: UPDATE_LOGEMENT,
                 payload: res.data
             })
-            history.push('/logements');
+            // history.push('/logements');
 
         }).catch(err => {
         dispatch({

@@ -16,7 +16,7 @@ const LeftSection = ({auth}) => {
           onClick={() => setIsShowSidebar(false)}
 
         />
-        <a href="#" style={{marginLeft:'50px', color:'#89ba16',fontSize:'20px', textDecoration:'none'}}> Key Service </a>
+        <a href="/#" style={{marginLeft:'50px', color:'#ed7e24',fontSize:'20px', textDecoration:'none'}}> Key Service </a>
       </div>
       <ul className="LeftSideBar__LeftSection__menuWrapper">
         <li>
@@ -47,23 +47,7 @@ const LeftSection = ({auth}) => {
         </li>
         <li>
           <a
-            href="#"
-          >
-          <i class="fas fa-user-clock" style={{marginRight:'8px'}}></i>
-           Mes disponibilités
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-          >
-          <i class="fas fa-percentage" style={{marginRight:'8px'}}></i>
-            Mes revenus
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
+            href="/#"
           >
           <i class="fas fa-envelope" style={{marginRight:'8px'}}></i>
             Contacter Key Service

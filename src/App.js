@@ -11,6 +11,7 @@ import createAdminStore from './createAdminStore';
 
 //le navbar des principaux pages du sites
 import NavBar from './components/NavBar/NavBar';
+import NavbarAuth from './components/NavBarauth/NavAuth';
 
 //le footer
 import Footer from './components/Footer/IndexFooter';
@@ -19,7 +20,7 @@ import Footer from './components/Footer/IndexFooter';
 import Home from './components/PageAccueil/IndexPageAcceuil';
 
 //les autres pages principales---------------------------------
-import Villes from './components/PageVilles/IndexPageVilles';
+import Paris from './components/LesVilles/paris/IndexParis';
 import Contacts from './components/PageNousContacter/IndexPageNousContacter';
 import Tarifs from './components/PageTarifs/IndexPageTarifs';
 import Services from './components/PageServices/IndexPageServices';
@@ -53,6 +54,8 @@ import LogementAvailability from "./components/DashboardHote/LogementAvailabilit
 import UploadImages from "./components/DashboardHote/UploadImages";
 
 import UserProfile from "./components/DashboardHote/UserProfile";
+
+import MonTarif from "./components/DashboardHote/MonTarif";
 //----------------------------------------------------------------------------
 
 
@@ -63,6 +66,8 @@ import NavEtSideVoyageur from "./components/DashboardVoyageur/NavEtSideVoyageur/
 import DashboardVoyageur from "./components/DashboardVoyageur/DashboardVoyageur";
 
 import PanierLists from "./components/DashboardVoyageur/PanierLists";
+
+import VoyageurProfile from "./components/DashboardVoyageur/VoyageurProfile";
 //---------------------------------------------------------------------------------
 
 import NotFound from "./components/NotFound";
@@ -179,6 +184,7 @@ export default class App extends Component {
                         {/*ici on a les routes privées. seul les utilisateurs ayant une session peuvent y accéder*/}
                         <PrivateRoute path="/(DashboardVoyageur)" component={Dashboard1}/>
                         <PrivateRoute path="/paniers" component={Dashboard1}/>
+                        <PrivateRoute path="/profilVoyageur/:id" component={Dashboard1}/>
                         <PrivateRoute path="/dashboardHote" component={Dashboard2}/>
                         <PrivateRoute path="/logements" component={Dashboard2}/>
                         <PrivateRoute path="/logements/addLogementPage" component={Dashboard2}/>
@@ -186,12 +192,16 @@ export default class App extends Component {
                         <PrivateRoute path="/logements/:id/disponibilites" component={Dashboard2}/>
                         <PrivateRoute path="/logements/:id/images" component={Dashboard2}/>
                         <PrivateRoute path="/profil/:id" component={Dashboard2}/>
+                        <PrivateRoute path="/logements/:id/tarif" component={Dashboard2}/>
 
                         {/*cette route regroupe les pages principaux du site*/}
                         <Route exact path='/' component={DefaultContainer}/>
                         <Route path='/contacts' component={DefaultContainer}/>
                         <Route path='/aPropos' component={DefaultContainer}/>
-                        <Route path='/villes' component={DefaultContainer}/>
+                        <Route path='/paris' component={DefaultContainer} />
+                        <Route path='/lyon' component={DefaultContainer} />
+                        <Route path='/bordeaux' component={DefaultContainer} />
+                        <Route path='/marseille' component={DefaultContainer} />
                         <Route path='/tarifs' component={DefaultContainer}/>
                         <Route path='/services' component={DefaultContainer}/>
 
@@ -208,6 +218,7 @@ export default class App extends Component {
 }
 const AuthContainer = () => (
     <div>
+        <NavbarAuth/>
         <Route path="/login" component={Login}/>
         <Route path="/inscription1" component={Inscription1}/>
         <Route path="/loginAfterRegister" component={LoginAfterRegister}/>
@@ -246,21 +257,21 @@ const Dashboard1 = () => (
         <Route path="/dashboardVoyageur" render={() => <Redirect to="/dashboardVoyageur"/>}/>
         <Route path="/dashboardVoyageur" component={DashboardVoyageur}/>
         <Route path="/paniers" component={PanierLists}/>
+        <Route path="/profilVoyageur/:id" component={VoyageurProfile}/>
     </div>
 )
 
 const Dashboard2 = () => (
     <div>
         <NavEtSideHote/>
-        <Switch>
-            <Route exact path="/dashboardHote" component={DashboardHote}/>
-            <Route exact path="/logements" component={LogementsList}/>
-            <Route path="/logements/addLogementPage" component={AddLogementPage}/>
-            <Route exact path="/logements/:id" component={DisplayLogement}/>
-            <Route path="/logements/:id/disponibilites" component={LogementAvailability}/>
-            <Route path="/logements/:id/images" component={UploadImages}/>
-            <Route exact path="/profil/:id" component={UserProfile}/>
-        </Switch>
+        <Route path="/dashboardHote" component={DashboardHote}/>
+        <Route exact path="/logements" component={LogementsList}/>
+        <Route path="/logements/addLogementPage" component={AddLogementPage}/>
+        <Route exact path="/logements/:id" component={DisplayLogement}/>
+        <Route path="/logements/:id/disponibilites" component={LogementAvailability}/>
+        <Route path="/logements/:id/images" component={UploadImages}/>
+        <Route exact path="/profil/:id" component={UserProfile}/>
+        <Route path="/logements/:id/tarif" component={MonTarif}/>
     </div>
 )
 
@@ -270,7 +281,7 @@ const DefaultContainer = () => (
         <Route exact path='/' component={Home}/>
         <Route path='/contacts' component={Contacts}/>
         <Route path='/aPropos' component={APropos}/>
-        <Route path='/villes' component={Villes}/>
+        <Route path='/paris' component={Paris} />
         <Route path='/tarifs' component={Tarifs}/>
         <Route path='/services' component={Services}/>
         <Footer/>
