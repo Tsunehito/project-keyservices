@@ -64,5 +64,5 @@
     ]
   },
   "homepage": ".",
-  "proxy": "http://localhost:3000"
+  "proxy": "http://keyservices-api.work:3000/"
 }
