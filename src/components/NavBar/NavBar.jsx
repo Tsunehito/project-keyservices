@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Navbar, Nav} from 'react-bootstrap';
+import {Navbar, Nav, Button, NavDropdown} from 'react-bootstrap';
 import {Styles} from './StyleNavBar';
 
 class NavBar extends Component {
@@ -19,15 +19,22 @@ class NavBar extends Component {
                         <Nav className="mr-auto">
                             <Nav.Item> <Nav.Link href="/">Accueil</Nav.Link> </Nav.Item>
                             <Nav.Item> <Nav.Link href="/contacts">Contacts</Nav.Link> </Nav.Item>
-                            <Nav.Item> <Nav.Link href="/aPropos">A propos</Nav.Link> </Nav.Item>
-                            <Nav.Item> <Nav.Link href="/villes">Villes</Nav.Link> </Nav.Item>
                             <Nav.Item> <Nav.Link href="/tarifs">Tarifs</Nav.Link> </Nav.Item>
                             <Nav.Item> <Nav.Link href="/services">Services</Nav.Link> </Nav.Item>
-
+                            <NavDropdown title="Villes" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/paris">Paris et île de France</NavDropdown.Item>
+                                <NavDropdown.Item href="/lyon">Lyon</NavDropdown.Item>
+                                <NavDropdown.Item href="/bordeaux">Bordeau</NavDropdown.Item>
+                                <NavDropdown.Item href="/marseille">Marseille</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Item> <Nav.Link href="/login">Se connecter</Nav.Link> </Nav.Item>
-                            <Nav.Item> <Nav.Link href="/inscription1"> S'inscrire </Nav.Link> </Nav.Item>
+                            <Nav.Item> <Nav.Link href="/login"><Button className="button_login"  size="sm">
+                                Se connecter
+                            </Button></Nav.Link> </Nav.Item>
+                            <Nav.Item> <Nav.Link href="/inscription1"><Button className="button_register"  size="sm">
+                                S'inscrire
+                            </Button></Nav.Link> </Nav.Item>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
